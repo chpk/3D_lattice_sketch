@@ -3,15 +3,6 @@
 
 Neural Style Transfer (NST) refers to a class of software algorithms that manipulate digital images, or videos, in order to adopt the appearance or visual style of another image. NST algorithms are characterized by their use of deep neural networks for the sake of image transformation. Popular use cases for NST are the creation of artificial artwork from photographs, for example by transferring the appearance of famous paintings to user-supplied photographs.
 
-<br> <!-- line break -->
-
-<div align="center">
-<img src="/Imgs/nst.png"/>
-</div>
-
-<br> <!-- line break -->
-
-
 ## 🎯 Objective 
 The main goal of this project is to explore Neural-style-transfer through implementation. We'll Implement a NST model using Tensorflow and keras, and at the end of the project we'll deploy it as a web app so that anyone can create stunning digital art which they could even sell as NFT's.
 
@@ -27,23 +18,9 @@ Style transfer is a computer vision technique that takes two images — a "conte
 <img src="/Imgs/nst architecture.jpg" width="80%"/>
 </div>
 
-<br> <!-- line break -->
-
-
-
 The ‘encoding nature’ of CNN’s is the key in Neural Style Transfer. Firstly, we initialize a noisy image, which is going to be our output image(G). We then calculate how similar is this image to the content and style image at a particular layer in the network(VGG network). Since we want that our output image(G) should have the content of the content image(C) and style of style image(S) we calculate the loss of generated image(G) w.r.t to the respective content(C) and style(S) image.
 
-
-
-<div align="center">
-<img src="/Imgs/final_oss.png" width="50%" />
-</div>
-
-<br> <!-- line break -->
-
-
 In simple words,we optimize our NST models to reduce the 'content loss' and the 'style loss'. The content loss function ensures that the activations of the higher layers are similar between the content image and the generated image. The style loss function makes sure that the correlation of activations in all the layers are similar between the style image and the generated image.
-
 
 ## 👨‍💻 Implementation
 
@@ -84,41 +61,6 @@ plt.imsave('stylized_image.jpeg',img)
 plt.imshow(img)
 plt.show()
 ```
-
-## 🔥 Web Interface & API
-
-In order to make it easy for anyone to interact with the model,we created a clean web interface using Streamlit and deployed it on their official cloud space.
-
-- Checkout Official Website : https://share.streamlit.io/deepeshdm/pixelmix/main/App.py
-- Website Repository : [here](https://github.com/deepeshdm/PixelMix)
-
-<div align="center">
-  <img src="/Imgs/website.gif" width="90%"/>
-</div>
-
-
-## 🖼🖌 Some of the art we created in this project
-
-<div align="center">
-  <img src="/Imgs/content1.jpg" width="35%"/>
-<img src="/Imgs/art1.png" width="35%"/>
-</div>
-
-<div align="center">
-<img src="/Imgs/content2.jpg" width="35%"/>
-<img src="/Imgs/art2.png" width="35%"/>
-</div>
-
-<div align="center">
-<img src="/Imgs/content3.jpg" width="35%"/>
-<img src="/Imgs/art3.png" width="35%"/>
-</div>
-
-<div align="center">
-<img src="/Imgs/content4.jpg" width="35%"/>
-<img src="/Imgs/art4.png" width="35%"/>
-</div>
-
 References :
 - https://arxiv.org/abs/1508.06576 
 - https://keras.io/examples/generative/neural_style_transfer/ 
